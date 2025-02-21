@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.controller.GameViewController">
+<!-- ////////////////////////////////////
+////////////////////////////////////
+//////////////////////////// -->
+    <!--Màn hình chơi game -->
+    <AnchorPane fx:id="gamePane" managed="false" prefHeight="768.0" prefWidth="1024.0">
+
+        <!-- Lưới 10 hình vuông -->
+        <GridPane fx:id="squareGrid" layoutX="162" layoutY="244" onMouseReleased="#handleSquareClick">
+            <columnConstraints>
+                <ColumnConstraints prefWidth="140" />
+                <ColumnConstraints prefWidth="140" />
+                <ColumnConstraints prefWidth="140" />
+                <ColumnConstraints prefWidth="140" />
+                <ColumnConstraints prefWidth="140" />
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints prefHeight="140" />
+                <RowConstraints prefHeight="140" />
+            </rowConstraints>
+            <!-- Hàng 1 -->
+            <StackPane fx:id="square11" minHeight="140" minWidth="140" prefHeight="140" prefWidth="140" style="-fx-background-color: LightBlue; -fx-border-width: 1; -fx-border-color: black" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <Label fx:id="label11"  style="-fx-text-fill: red; -fx-font-size: 80;"  />
+            </StackPane>
+            <StackPane fx:id="square10" minHeight="140" minWidth="140" prefHeight="140" prefWidth="140" style="-fx-background-color: LightBlue; -fx-border-width: 1; -fx-border-color: black" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <Label fx:id="label10" style="-fx-text-fill: red; -fx-font-size: 80;"  />
+            </StackPane>
+            <StackPane fx:id="square9" minHeight="140" minWidth="140" prefHeight="140" prefWidth="140" style="-fx-background-color: LightBlue; -fx-border-width: 1; -fx-border-color: black" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                <Label fx:id="label9"  style="-fx-text-fill: red; -fx-font-size: 80;"  />
+            </StackPane>
+            <StackPane fx:id="square8" minHeight="140" minWidth="140" prefHeight="140" prefWidth="140" style="-fx-background-color: LightBlue; -fx-border-width: 1; -fx-border-color: black" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                <Label fx:id="label8" style="-fx-text-fill: red; -fx-font-size: 80;"  />
+            </StackPane>
+            <StackPane fx:id="square7" minHeight="140" minWidth="140" prefHeight="140" prefWidth="140" style="-fx-background-color: LightBlue; -fx-border-width: 1; -fx-border-color: black" GridPane.columnIndex="4" GridPane.rowIndex="0">
+                <Label fx:id="label7"  style="-fx-text-fill: red; -fx-font-size: 80;"  />
+            </StackPane>
+
+            <!-- Hàng 2 -->
+            <StackPane fx:id="square1" minHeight="140" minWidth="140" prefHeight="140" prefWidth="140" style="-fx-background-color: LightBlue; -fx-border-width: 1; -fx-border-color: black" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <Label fx:id="label1" style="-fx-text-fill: red; -fx-font-size: 80;"  />
+            </StackPane>
+            <StackPane fx:id="square2" minHeight="140" minWidth="140" prefHeight="140" prefWidth="140" style="-fx-background-color: LightBlue; -fx-border-width: 1; -fx-border-color: black" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Label fx:id="label2" style="-fx-text-fill: red; -fx-font-size: 80;"  />
+            </StackPane>
+            <StackPane fx:id="square3" minHeight="140" minWidth="140" prefHeight="140" prefWidth="140" style="-fx-background-color: LightBlue; -fx-border-width: 1; -fx-border-color: black" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <Label fx:id="label3" style="-fx-text-fill: red; -fx-font-size: 80;"  />
+            </StackPane>
+            <StackPane fx:id="square4" minHeight="140" minWidth="140" prefHeight="140" prefWidth="140" style="-fx-background-color: LightBlue; -fx-border-width: 1; -fx-border-color: black" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                <Label fx:id="label4" style="-fx-text-fill: red; -fx-font-size: 80;"  />
+            </StackPane>
+            <StackPane fx:id="square5" minHeight="140" minWidth="140" prefHeight="140" prefWidth="140" style="-fx-background-color: LightBlue; -fx-border-width: 1; -fx-border-color: black" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                <Label fx:id="label5" style="-fx-text-fill: red; -fx-font-size: 80;"  />
+            </StackPane>
+        </GridPane>
+
+        <!-- Hình bán nguyệt bên trái -->
+        <StackPane fx:id="square0" layoutX="20" layoutY="244">
+            <Arc fx:id="square0Arc" fill="deepskyblue" length="180" radiusX="140" radiusY="140" startAngle="90" stroke="BLACK" strokeWidth="2" />
+            <Label fx:id="label0" style="-fx-text-fill: red; -fx-font-size: 100;"  />
+        </StackPane>
+
+        <!-- Hình bán nguyệt bên phải -->
+        <StackPane fx:id="square6" layoutX="862" layoutY="244">
+            <Arc fx:id="square6Arc" fill="deepskyblue" length="180" radiusX="140" radiusY="140" startAngle="270" stroke="BLACK" strokeWidth="2" />
+            <Label fx:id="label6" style="-fx-text-fill: red; -fx-font-size: 100;"  />
+        </StackPane>
+
+        <StackPane fx:id="pickSquare" layoutX="100" layoutY="530" minHeight="140" minWidth="140" style="-fx-background-color: LightBlue; -fx-border-width: 1; -fx-border-color: black">
+        </StackPane>
+        <!-- Nút Menu màu xanh ở góc trên bên trái -->
+        <Button layoutX="900" layoutY="20" minHeight="30" minWidth="80" onMouseReleased="#handleMenuButton" style="-fx-background-color: #1E90FF; -fx-text-fill: white;" text="Menu" />
+
+        <!-- Khung vuông bên trái góc dưới để ảnh -->
+        <StackPane layoutX="20" layoutY="20">
+            <Rectangle fill="LIGHTGRAY" height="140" stroke="BLACK" strokeWidth="2" width="140" />
+            <ImageView fitHeight="140" fitWidth="140">
+                <Image url="@/image/avatar1.jpg" />
+            </ImageView>
+        </StackPane>
+        <Label fx:id="namePlayer2" layoutX="180" layoutY="40" style="-fx-font-size: 18px; -fx-text-fill: black;" text="Player2" />
+        <Label fx:id="scorePlayer2" layoutX="180" layoutY="80" style="-fx-font-size: 18px; -fx-text-fill: black;" text="Score: 0" />
+        <Label fx:id="borrowGemPlayer2" layoutX="180" layoutY="120" style="-fx-font-size: 18px; -fx-text-fill: black;" text="Score: 0" />
+        <!-- Khung vuông bên phải góc dưới để ảnh -->
+        <StackPane layoutX="850" layoutY="600">
+            <Rectangle fill="LIGHTGRAY" height="140" stroke="BLACK" strokeWidth="2" width="140" />
+            <ImageView fitHeight="140" fitWidth="140">
+                <Image url="@/image/avatar2.jpg" />
+            </ImageView>
+        </StackPane>
+
+
+        <Label fx:id="namePlayer1" layoutX="700" layoutY="620" style="-fx-font-size: 18px; -fx-text-fill: black;" text="Player1" />
+        <Label fx:id="scorePlayer1" layoutX="700" layoutY="660" style="-fx-font-size: 18px; -fx-text-fill: black;" text="Score: 0" />
+        <Label fx:id="borrowGemPlayer1" layoutX="700" layoutY="700" style="-fx-font-size: 18px; -fx-text-fill: black;" text="Score: 0" />
+        <Button fx:id="spreadGemButton" layoutX="472" layoutY="680" minHeight="30" minWidth="80" onMouseClicked="#handleSpreadGemButtonClick" style="-fx-background-color: #1E90FF; -fx-text-fill: white;" text="Spread Gem" visible="false" />
+
+        <Button fx:id="rightButton" layoutX="200" layoutY="680" minHeight="30" minWidth="80" onMouseClicked="#handleButtonDirectionClick" style="-fx-background-color: #1E90FF; -fx-text-fill: white;" text="Right" visible="false" />
+        <Button fx:id="leftButton" layoutX="100" layoutY="680" minHeight="30" minWidth="80" onMouseClicked="#handleButtonDirectionClick" style="-fx-background-color: #1E90FF; -fx-text-fill: white;" text="Left" visible="false" />
+        <Text fx:id="currentPlayerText" layoutX="472" layoutY="40" style="-fx-pref-width: 150; -fx-font-size: 20; -fx-font-weight: bold" />
+    </AnchorPane>
+    <!--Màn hình nhập tên-->
+   <StackPane fx:id="insertNamePane" opacity="0.9" prefHeight="768.0" prefWidth="1024.0">
+      <children>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="300.0" stroke="BLACK" strokeType="INSIDE" width="500.0" />
+         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" StackPane.alignment="CENTER">
+            <children>
+               <Label text="Enter Players' Name">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+               </Label>
+               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                  <children>
+                     <Label text="Player 1's Name" />
+                     <TextField fx:id="player1TextField" />
+                  </children>
+               </HBox>
+               <HBox alignment="CENTER" layoutX="10.0" layoutY="363.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                  <children>
+                     <Label text="Player 2's Name" />
+                     <TextField fx:id="player2TextField" />
+                  </children>
+               </HBox>
+               <Button fx:id="confirmNameButton" mnemonicParsing="false" text="Xác nhận" />
+            </children>
+         </VBox>
+      </children>
+   </StackPane>
+
+    <!-- ////////////////////////////////////
+    ////////////////////////////////////////
+    màn hình menu trong game-->
+    <StackPane fx:id="menuGamePane" managed="false" visible="false">
+        <Rectangle fill="white" height="200" opacity="0.9" width="500" />
+
+        <VBox alignment="CENTER" spacing="20">
+            <Button fx:id="continuePlayButton" maxWidth="100" onMouseReleased="#handleContinueButton" text="Chơi tiếp" />
+            <Button fx:id="exitGamePaneButton" maxWidth="100" onMouseReleased="#handleExitGameButton" text="Thoát" />
+        </VBox>
+
+    </StackPane>
+
+
+
+
+    <!-- ////////////////////////////////////
+    ////////////////////////////////////
+    ////////////////////////////
+
+    màn hình kết thúc game
+    -->
+    <StackPane fx:id="endGamePane" opacity="0.9" style="-fx-background-color: white" visible="false">
+        <!-- Content for End Game -->
+        <VBox alignment="CENTER" maxWidth="480" spacing="20">
+            <Text fx:id="endText" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-alignment: center" />
+            <Label fx:id="winnerLabel" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: red" />
+            <Label fx:id="player1ScoreLabel" style="-fx-font-size: 20px;" />
+            <Label fx:id="player2ScoreLabel" style="-fx-font-size: 20px;" />
+
+            <Button fx:id="replayButton" onMouseReleased="#replayGame" style="-fx-font-size: 16px;" text="Chơi Lại" />
+            <Button fx:id="exitEndGameButton" onMouseReleased="#exitEndGame" style="-fx-font-size: 16px;" text="Thoát" />
+        </VBox>
+    </StackPane>
+</StackPane>
